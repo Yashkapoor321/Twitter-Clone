@@ -4,7 +4,6 @@ const mongoose = require("mongoose");
 const userRoute = require("./routes/userRoute.js");
 const tweetRoute = require("./routes/tweetRoute.js");
 const cookieParser = require("cookie-parser");
-const cors = require("cors");
 
 dotenv.config();
 
@@ -24,11 +23,7 @@ app.use(express.urlencoded({
 app.use(express.json());
 app.use(cookieParser());
 
-const corsOptions = {
-  origin:"http://localhost:3000",
-  credentials:true
-}
-app.use(cors(corsOptions));
+
 
 // Routes
 app.use("/api/v1/user", userRoute);
