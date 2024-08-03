@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Avatar from "react-avatar";
 import { CiImageOn } from "react-icons/ci";
 import axios from "axios";
-import { TWEET_API_END_POINT } from "../utils/constant";
+// import { TWEET_API_END_POINT } from "../utils/constant";
 import toast from "react-hot-toast"
 import { useSelector, useDispatch } from "react-redux";
 import { getAllTweets, getIsActive, getRefresh } from '../redux/tweetSlice';
@@ -16,11 +16,11 @@ const CreatePost = () => {
     const submitHandler = async () => {
 
         try {
-            const res = await axios.post(`${TWEET_API_END_POINT}/create`, { description, id: user?._id }, {
+            const res = await axios.post("https://twitter-clone-67iy.onrender.com/api/v1/tweet/create", { description, id: user?._id }, {
                 headers: {
                     "Content-Type": "application/json"
                 },
-                withCredentials: true
+               credentials: 'include'
             });
             dispatch(getRefresh());
             if (res.data.success) {

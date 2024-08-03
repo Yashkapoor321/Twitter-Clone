@@ -9,7 +9,7 @@ import { AiOutlineLogout } from "react-icons/ai";
 import { Link,useNavigate } from 'react-router-dom';
 import {useSelector,useDispatch} from "react-redux";
 import axios from "axios";
-import { USER_API_END_POINT } from '../utils/constant';
+// import { USER_API_END_POINT } from '../utils/constant';
 import toast from "react-hot-toast"
 import { getMyProfile, getOtherUsers, getUser } from '../redux/userSlice';
  
@@ -21,7 +21,7 @@ const LeftSidebar = () => {
     const dispatch = useDispatch();
     const logoutHandler = async () => {
         try {
-            const res = await axios.get(`${USER_API_END_POINT}/logout`);
+            const res = await axios.get("https://twitter-clone-67iy.onrender.com/api/v1/user/logout");
             dispatch(getUser(null));
             dispatch(getOtherUsers(null));
             dispatch(getMyProfile(null));

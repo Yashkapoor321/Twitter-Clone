@@ -1,5 +1,5 @@
 import axios from "axios";
-import { USER_API_END_POINT } from "../utils/constant";
+// import { USER_API_END_POINT } from "../utils/constant";
 import { useEffect } from "react";
 import {useDispatch} from "react-redux";
 import { getMyProfile } from "../redux/userSlice";
@@ -9,7 +9,7 @@ const useGetProfile = (id) => {
     useEffect(()=>{
         const fetchMyProfile = async () => {
             try {
-                const res = await axios.get(`${USER_API_END_POINT}/profile/${id}`,{
+                const res = await axios.get("https://twitter-clone-67iy.onrender.com/api/v1/user/profile/"`${id}`,{
                     withCredentials:true
                 });
                 console.log(res);

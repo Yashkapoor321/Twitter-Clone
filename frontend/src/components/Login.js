@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from "axios";
-import { USER_API_END_POINT } from "../utils/constant";
+// import { USER_API_END_POINT } from "../utils/constant";
 import toast from "react-hot-toast";
 import {useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
@@ -20,11 +20,11 @@ const Login = () => {
     if (isLogin) {
       // login
       try {
-        const res = await axios.post(`${USER_API_END_POINT}/login`, { email, password }, {
+        const res = await axios.post("https://twitter-clone-67iy.onrender.com/api/v1/user/login", { email, password }, {
           headers: {
             'Content-Type': "application/json"
           },
-          withCredentials: true
+           credentials: 'include'
         }); 
         dispatch(getUser(res?.data?.user));
         if(res.data.success){
@@ -38,11 +38,11 @@ const Login = () => {
     } else {
       // signup
       try {
-        const res = await axios.post(`${USER_API_END_POINT}/register`, { name, username, email, password }, {
+        const res = await axios.post("https://twitter-clone-67iy.onrender.com/api/v1/user/register", { name, username, email, password }, {
           headers: {
             'Content-Type': "application/json"
           },
-          withCredentials: true
+         credentials: 'include'
         }); 
         if(res.data.success){
           setIsLogin(true);
