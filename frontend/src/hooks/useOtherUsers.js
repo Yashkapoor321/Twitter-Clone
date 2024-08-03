@@ -9,7 +9,7 @@ const useOtherUsers = (id) => {
     useEffect(()=>{
         const fetchOtherUsers = async () => {
             try {
-                const res = await axios.get("https://twitter-clone-67iy.onrender.com/api/v1/user/otheruser/"`${id}`,{
+                const res = await axios.get(`https://twitter-clone-67iy.onrender.com/api/v1/user/otheruser/${id}`,{
                     withCredentials:true
                 });
                 console.log(res);

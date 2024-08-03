@@ -18,7 +18,7 @@ const Tweet = ({ tweet }) => {
     const dispatch = useDispatch();
     const likeOrDislikeHandler = async (id) => {
         try {
-            const res = await axios.put("https://twitter-clone-67iy.onrender.com/api/v1/tweet/like/"`${id}`, { id: user?._id }, {
+            const res = await axios.put(`https://twitter-clone-67iy.onrender.com/api/v1/tweet/like/${id}`, { id: user?._id }, {
                credentials: 'include'
             })
             console.log(res);
@@ -33,7 +33,7 @@ const Tweet = ({ tweet }) => {
     const deleteTweetHandler = async (id) => {
         try {
             axios.defaults.withCredentials = true;
-            const res = await axios.delete("https://twitter-clone-67iy.onrender.com/api/v1/tweet/delete/"`${id}`);
+            const res = await axios.delete(`https://twitter-clone-67iy.onrender.com/api/v1/tweet/delete/${id}`);
             console.log(res);
             dispatch(getRefresh());
             toast.success(res.data.message);

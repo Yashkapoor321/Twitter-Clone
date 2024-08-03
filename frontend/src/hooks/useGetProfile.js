@@ -9,7 +9,7 @@ const useGetProfile = (id) => {
     useEffect(()=>{
         const fetchMyProfile = async () => {
             try {
-                const res = await axios.get("https://twitter-clone-67iy.onrender.com/api/v1/user/profile/"`${id}`,{
+                const res = await axios.get(`https://twitter-clone-67iy.onrender.com/api/v1/user/profile/${id}`,{
                     withCredentials:true
                 });
                 console.log(res);
