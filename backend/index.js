@@ -11,12 +11,12 @@ dotenv.config();
 const app = express();
 
 
+const corsOptions = {
+  origin: 'https://twitter-clone-zeta-topaz.vercel.app',
+  credentials: true
+};
 
-mongoose
-  .connect(process.env.DATABASE_URI)
-  .then(() => console.log("DB Connected Successfully"))
-  .catch((err) => console.log("Error connecting DB", err));
-
+app.use(cors(corsOptions));
 //Middlewares
 app.use(express.urlencoded({
   extended:true
@@ -24,7 +24,14 @@ app.use(express.urlencoded({
 app.use(express.json());
 app.use(cookieParser());
 
-app.use(cors());
+mongoose
+  .connect(process.env.DATABASE_URI)
+  .then(() => console.log("DB Connected Successfully"))
+  .catch((err) => console.log("Error connecting DB", err));
+
+
+
+
 
 
 
