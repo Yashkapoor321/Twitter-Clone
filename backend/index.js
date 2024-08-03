@@ -12,7 +12,7 @@ const app = express();
 
 
 const corsOptions = {
-  origin: 'https://twitter-clone-mm8u34h64-yashs-projects-0271b1a9.vercel.app/login',
+  origin: '*',
   credentials: true
 };
 
