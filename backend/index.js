@@ -11,13 +11,8 @@ dotenv.config();
 const app = express();
 
 
-const corsOptions = {
-  origin: "http://localhost:3000",
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true
-};
 
-app.use(cors(corsOptions));
+app.use(cors());
 //Middlewares
 app.use(express.urlencoded({
   extended:true
@@ -40,7 +35,7 @@ mongoose
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/tweet", tweetRoute)
 
-const PORT =  process.env.PORT || 10000
+const PORT =  process.env.PORT || 4000
 app.listen(PORT, () => {
     console.log(`Server is up and running at port ${PORT}`)
 })
