@@ -12,7 +12,8 @@ const app = express();
 
 
 const corsOptions = {
-  origin: '*',
+  origin: "http://localhost:3000",
+  methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 };
 
@@ -39,7 +40,7 @@ mongoose
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/tweet", tweetRoute)
 
-const PORT = 10000
+const PORT =  process.env.PORT || 10000
 app.listen(PORT, () => {
     console.log(`Server is up and running at port ${PORT}`)
 })
