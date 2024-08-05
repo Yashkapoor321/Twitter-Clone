@@ -37,7 +37,7 @@ Json Data Pass in body of Postman
 
 ## 3. Get LoggedIn User Profile <br>
 This API  give successful response after login. Without login, this API responds User not authenticated. Use **GET Method** to see response from **postman** <br>
-**Note :  You have got "id" at the time of login. You have to put your id value at the place of :id**
+**STEP :  You have got "id" at the time of login. You have to put your id value at the place of :id**
 ```
 https://twitter-clone-67iy.onrender.com/api/v1/user/profile/:id
 ```
@@ -88,4 +88,64 @@ https://twitter-clone-67iy.onrender.com/api/v1/user/unfollow/:id
     "id" : "66adb720662525a960fb8e01"  
 }
 ```
+
+## 7. Create Tweet API <br>
+This API  give successful response after login. Without login, this API responds User not authenticated. Use **POST Method** to see response from **postman**. <br>
+**STEP - 1 : Use this URL**
+```
+https://twitter-clone-67iy.onrender.com/api/v1/tweet/create
+```
+**STEP - 2 : In body of postman pass, description of tweet and loggedIn user's 'id', You have got 'id' at the time of login.**
+```
+{
+    "description" : "this tweet created by nikita",
+    "id" :  "66b0881809c826ed75c915e3"
+}
+```
+
+## 8. See LoggedIn User's Tweet and follow user's tweet <br>
+This API  give successful response after login. Without login, this API responds User not authenticated. Use **GET Method** to see response from **postman**. <br>
+
+**STEP  : You have to pass loggedIn user's 'id at the place of ':id", You have got 'id' at the time of login.** <br>
+You will get all information about tweet and if you have follow someone, who's tweet will be visible and there information also.
+```
+https://twitter-clone-67iy.onrender.com/api/v1/tweet/alltweets/:id
+```
+
+
+## 9. Follow User's Tweet only<br>
+This API  give successful response after login. Without login, this API responds User not authenticated. Use **GET Method** to see response from **postman**.<br>
+You can see tweet's of other users only when if you follow that users.<br>
+
+**STEP : At the place of ':id' keep loggedIn user's 'id', You have got 'id' at the time of login.**
+```
+https://twitter-clone-67iy.onrender.com/api/v1/tweet/followingtweets/:id
+```
+
+## 10. Like Tweet<br>
+This API  give successful response after login. Without login, this API responds User not authenticated. Use **PUT Method** to see response from **postman**.<br>
+You can also dislike the tweet only when, if you liked that tweet <br>
+
+**STEP-1 : At the place of ':id' You have to keep 'tweet id', You will get 'tweet id' from "See LoggedIn User's Tweet and follow user's tweet" API or " Follow User's Tweet only" API.**
+```
+https://twitter-clone-67iy.onrender.com/api/v1/tweet/like/:id
+```
+
+**STEP - 2 : In body of postman pass loggedIn user's 'id', You have got 'id' at the time of login.**
+```
+{
+    "id" : "66b0881809c826ed75c915e3"
+}
+```
+
+## 11. Delete Tweet <br>
+This API  give successful response after login. Without login, this API responds User not authenticated. Use **DELETE Method** to see response from **postman**.<br>
+
+**STEP-1 : At the place of ':id' You have to keep 'tweet id', You will get 'tweet id' from "See LoggedIn User's Tweet and follow user's tweet" API or "Follow User's Tweet only" API.**
+```
+https://twitter-clone-67iy.onrender.com/api/v1/tweet/delete/:id
+```
+
+
+
 
