@@ -10,8 +10,11 @@ dotenv.config();
 
 const app = express();
 
+const corsOptions = {
+  credentials: true // Allows cookies to be sent
+};
 
-app.use(cors());
+app.use(cors(corsOptions));
 //Middlewares
 app.use(express.urlencoded({
   extended:true
