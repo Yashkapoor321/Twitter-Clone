@@ -9,7 +9,7 @@ This is a new user register API use this API with the **POST Method in postman**
 https://twitter-clone-67iy.onrender.com/api/v1/user/register
 ```
 
-##### Register/SignUp Format <br>
+##### Register/SignUp step <br>
 Json Data Pass in body of Postman
 ```
 {
@@ -26,7 +26,7 @@ This is a login API after successful creation of tweeter account use this API to
 https://twitter-clone-67iy.onrender.com/api/v1/user/login
 ```
 
-##### Login Format <br>
+##### Login step <br>
 Json Data Pass in body of Postman
 ```
 {
@@ -36,7 +36,7 @@ Json Data Pass in body of Postman
 ```
 
 ## 3. Get LoggedIn User Profile <br>
-This API  give successful response after login. Without login, this API responds User not authenticated. Use **GET Method** to see response from **postman**
+This API  give successful response after login. Without login, this API responds User not authenticated. Use **GET Method** to see response from **postman** <br>
 **Note :  You have got "id" at the time of login. You have to put your id value at the place of :id**
 ```
 https://twitter-clone-67iy.onrender.com/api/v1/user/profile/:id
@@ -45,7 +45,7 @@ https://twitter-clone-67iy.onrender.com/api/v1/user/profile/:id
 
 ## 4. Get Other-Users-Profile  <br>
 This API  give successful response after login. Without login, this API responds User not authenticated. Use **GET Method** to see response from **postman**. <br>
-**This API give list of all other people**
+**This API give list of all other people**<br>
 **STEP - 1 :  You have got "id" at the time of login.  You have to put your id value at the place of :id**
 ```
 https://twitter-clone-67iy.onrender.com/api/v1/user/otheruser/:id
@@ -64,7 +64,7 @@ https://twitter-clone-67iy.onrender.com/api/v1/user/otheruser/:id
 
 
 ## 5. Follow Other-Users <br>
-This API  give successful response after login. Without login, this API responds User not authenticated. Use **POST Method** to see response from **postman**.
+This API  give successful response after login. Without login, this API responds User not authenticated. Use **POST Method** to see response from **postman**. <br>
 **STEP - 1 : keep other people "id" at the place of ":id", You will get other people id from above api**
 ```
 https://twitter-clone-67iy.onrender.com/api/v1/user/follow/:id
@@ -77,7 +77,7 @@ https://twitter-clone-67iy.onrender.com/api/v1/user/follow/:id
 ```
 
 ## 6. UnFollow Other-Users <br>
-This API  give successful response after login. Without login, this API responds User not authenticated. Use **POST Method** to see response from **postman**.
+This API  give successful response after login. Without login, this API responds User not authenticated. Use **POST Method** to see response from **postman**. <br>
 **STEP - 1 : keep other people "id" at the place of ":id", You will get other people id from Get others-users profile api(heading serial no.4)**
 ```
 https://twitter-clone-67iy.onrender.com/api/v1/user/unfollow/:id
