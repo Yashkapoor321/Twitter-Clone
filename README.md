@@ -3,7 +3,7 @@
 https://twitter-clone-67iy.onrender.com
 ```
 
-## 1.SignUp/Register API <br>
+## 1.SignUp/Register  <br>
 This is a new user register API use this API with the **POST Method in postman** to create twitter account
 ```
 https://twitter-clone-67iy.onrender.com/api/v1/user/register
@@ -20,8 +20,8 @@ Json Data Pass in body of Postman
 }
 ```
 
-## 2.Login API <br>
-This is a login API after successful creation of tweeter account use this API to login. **Post Method** is require for this API in **postman**
+## 2.Login <br>
+This is a login API after successful creation of tweeter account use this API to login. **Post Method** is required for this API in **postman**
 ```
 https://twitter-clone-67iy.onrender.com/api/v1/user/login
 ```
@@ -35,68 +35,57 @@ Json Data Pass in body of Postman
 }
 ```
 
-## 3. Get LoggedIn User Profile API <br>
+## 3. Get LoggedIn User Profile <br>
 This API  give successful response after login. Without login, this API responds User not authenticated. Use **GET Method** to see response from **postman**
+**Note :  You have got "id" at the time of login. You have to put your id value at the place of :id**
 ```
 https://twitter-clone-67iy.onrender.com/api/v1/user/profile/:id
 ```
 
-##### LoggedIn User Profile Format <br>
+
+## 4. Get Other-Users-Profile  <br>
+This API  give successful response after login. Without login, this API responds User not authenticated. Use **GET Method** to see response from **postman**. <br>
+**This API give list of all other people**
+**STEP - 1 :  You have got "id" at the time of login.  You have to put your id value at the place of :id**
 ```
-https://twitter-clone-67iy.onrender.com/api/v1/user/profile/66adb720662525a960fb8e01
+https://twitter-clone-67iy.onrender.com/api/v1/user/otheruser/:id
 ```
 
-
-## 4. Get Other-Users-Profile API <br>
-This API  give successful response after login. Without login, this API responds User not authenticated. Use **GET Method** to see response from **postman**.
-```
-https://twitter-clone-67iy.onrender.com/api/v1/otheruser/profile/:id
-```
-
-##### Other-Users-Profile See Format <br>
-step-1 : In URL instead :id pass self/loggedIn  userId
-```
-https://twitter-clone-67iy.onrender.com/api/v1/user/otheruser/66adb720662525a960fb8e01
-```
-step-2 : In body of postman pass other users userId
+**STEP - 2 : In body of postman pass other people's user Id**
 ```
 {
     "otherUserid" : "66adb759662525a960fb8e05"
 }
 ```
+##### List of other people's user Id 
+1.  66adb720662525a960fb8e01
+2.  66adb759662525a960fb8e05
+3.  66b0881809c826ed75c915e3
 
-## 5. Follow Other-Users API <br>
+
+## 5. Follow Other-Users <br>
 This API  give successful response after login. Without login, this API responds User not authenticated. Use **POST Method** to see response from **postman**.
+**STEP - 1 : keep other people "id" at the place of ":id", You will get other people id from above api**
 ```
 https://twitter-clone-67iy.onrender.com/api/v1/user/follow/:id
 ```
-#####  Other-Users Follow API Format <br>
-step-1 : In URL instead :id pass others users Id
-```
-https://twitter-clone-67iy.onrender.com/api/v1/user/follow/66adb759662525a960fb8e05
-```
-step-2 : In body of postman pass loggedIn users userId
+**STEP - 2 : In body of postman pass loggedIn user's "id", You have got "id" at the time of login.**
 ```
 {
     "id" : "66adb720662525a960fb8e01"
 }
 ```
 
-## 6. UnFollow Other-Users API <br>
+## 6. UnFollow Other-Users <br>
 This API  give successful response after login. Without login, this API responds User not authenticated. Use **POST Method** to see response from **postman**.
+**STEP - 1 : keep other people "id" at the place of ":id", You will get other people id from Get others-users profile api(heading serial no.4)**
 ```
 https://twitter-clone-67iy.onrender.com/api/v1/user/unfollow/:id
 ```
-#####  Other-Users UnFollow API Format <br>
-step-1 : In URL instead :id pass others users Id
-```
-https://twitter-clone-67iy.onrender.com/api/v1/user/unfollow/66adb759662525a960fb8e05
-```
-step-2 : In body of postman pass loggedIn users userId
+**STEP - 2 : In body of postman pass loggedIn user's "id", You have got "id" at the time of login.**
 ```
 {
-    "id" : "66adb720662525a960fb8e01"
+    "id" : "66adb720662525a960fb8e01"  
 }
 ```
-
 
