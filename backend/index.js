@@ -10,13 +10,8 @@ dotenv.config();
 
 const app = express();
 
-var corsOptions = {
-  origin: 'https://vercel.com/',
-  optionsSuccessStatus: 200,
-  credentials: 'include'
-}
 
-app.use(cors(corsOptions));
+app.use(cors());
 //Middlewares
 app.use(express.urlencoded({
   extended:true
