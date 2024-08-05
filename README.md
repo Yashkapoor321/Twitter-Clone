@@ -146,6 +146,14 @@ This API  give successful response after login. Without login, this API responds
 https://twitter-clone-67iy.onrender.com/api/v1/tweet/delete/:id
 ```
 
+## 12. Logout <br>
+This API  give successful response after login. Without login, this API responds User not authenticated. Use **GET Method** to see response from **postman**.<br>
+
+**STEP : Use this URL for logout**
+```
+https://twitter-clone-67iy.onrender.com/api/v1/user/logout
+```
+
 
 
 
